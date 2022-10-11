@@ -1,4 +1,5 @@
 <div id="<%= dom_id category %>">
+<%= link_to category_operations_path(category) do %>
   <p>
     <strong>Name:</strong>
     <%= category.name %>
@@ -13,5 +14,5 @@
     <strong>User:</strong>
     <%= category.user_id %>
   </p>
-
+<% end %>
 </div>

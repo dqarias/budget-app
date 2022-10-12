@@ -1,9 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Operations</h1>
-<% @category.each do |category| %>
-<%= category.name %>
-<%end%>
+<%= @category.name %>
 <div id="operations">
   <% @operations.each do |operation| %>
     <%= render operation %>

@@ -3,10 +3,8 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @category = Category.where(id: params[:category_id])
-
-    @operations = Operation.all
-    
+    @category = Category.find(params[:category_id])
+    @operations = @category.operations
   end
 
   # GET /operations/1 or /operations/1.json
@@ -29,7 +27,7 @@ class OperationsController < ApplicationController
 
     respond_to do |format|
       if @operation.save
-        format.html { redirect_to operation_url(@operation), notice: 'Operation was successfully created.' }
+        format.html { redirect_to category_operations_path(@operation), notice: 'Operation was successfully created.' }
         format.json { render :show, status: :created, location: @operation }
       else
         format.html { render :new, status: :unprocessable_entity }

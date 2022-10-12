@@ -1,9 +1,10 @@
 class OperationsController < ApplicationController
+  before_action :get_category
+  before_action :get_categories
   before_action :set_operation, only: %i[show edit update destroy]
 
   # GET /operations or /operations.json
   def index
-    @category = Category.find(params[:category_id])
     @operations = @category.operations
   end
 
@@ -12,7 +13,7 @@ class OperationsController < ApplicationController
 
   # GET /operations/new
   def new
-    @operation = Operation.new
+    @operation = current_user.operations.build
   end
 
   # GET /operations/1/edit
@@ -20,14 +21,11 @@ class OperationsController < ApplicationController
 
   # POST /operations or /operations.json
   def create
-    @category = Category.where(id: params[:category_id])
-    #@operation = Operation.new(operation_params)
-    @operation = @category.operations.new(operation_params)
-    @operation.user = current_user
-
+    @operation = current_user.operations.build(operation_params)
     respond_to do |format|
       if @operation.save
-        format.html { redirect_to category_operations_path(@operation), notice: 'Operation was successfully created.' }
+        @operation.categories << get_categories
+        format.html { redirect_to category_operations_path(@category), notice: 'Operation was successfully created.' }
         format.json { render :show, status: :created, location: @operation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +63,19 @@ class OperationsController < ApplicationController
   def set_operation
     @operation = Operation.find(params[:id])
   end
+  
+  def get_category
+    @category = Category.find(params[:category_id])
+  end
+
+  def get_categories
+    categories = []
+    selected_category = Category.find(params[:category_id])
+    extra_categories = params[:categories] ? Category.where(id: params[:categories][:category_ids]).to_a : []
+    categories << selected_category << extra_categories
+    categories.flatten
+  end
+
 
   # Only allow a list of trusted parameters through.
   def operation_params

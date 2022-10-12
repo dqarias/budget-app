@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     @category.user = current_user
-   
+
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_url(@category), notice: 'Category was successfully created.' }

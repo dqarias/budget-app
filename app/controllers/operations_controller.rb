@@ -1,6 +1,6 @@
 class OperationsController < ApplicationController
-  before_action :get_category
-  before_action :get_categories
+  before_action :acq_category
+  before_action :acq_categories
   before_action :set_operation, only: %i[show edit update destroy]
 
   # GET /operations or /operations.json
@@ -24,7 +24,7 @@ class OperationsController < ApplicationController
     @operation = current_user.operations.build(operation_params)
     respond_to do |format|
       if @operation.save
-        @operation.categories << get_categories
+        @operation.categories << acq_categories
         format.html { redirect_to category_operations_path(@category), notice: 'Operation was successfully created.' }
         format.json { render :show, status: :created, location: @operation }
       else
@@ -63,19 +63,18 @@ class OperationsController < ApplicationController
   def set_operation
     @operation = Operation.find(params[:id])
   end
-  
-  def get_category
+
+  def acq_category
     @category = Category.find(params[:category_id])
   end
 
-  def get_categories
+  def acq_categories
     categories = []
     selected_category = Category.find(params[:category_id])
     extra_categories = params[:categories] ? Category.where(id: params[:categories][:category_ids]).to_a : []
     categories << selected_category << extra_categories
     categories.flatten
   end
-
 
   # Only allow a list of trusted parameters through.
   def operation_params

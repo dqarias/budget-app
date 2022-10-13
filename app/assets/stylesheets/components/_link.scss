@@ -1,0 +1,21 @@
+.link {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-family: var( --font-subtitles);
+  
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-white);
+    }
+  
+    // Modifiers will go there
+  }
+
+  .link__msg{
+    font-size: 1.3rem;
+    color: var(--color-primary-rotate);
+    font-size: 500;
+  }

@@ -1,5 +1,9 @@
-<h1>Splash#index</h1>
-<p>Find me in app/views/splash/index.html.erb</p>
-
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Log in", new_user_session_path %>
+<div class="home">
+    <div class="home__img">
+    <img class="home__image" src="<%=asset_path("logo_pay.png") %>" >
+    </div>
+    <div class="home__buttons">
+            <%= link_to "LOG IN", new_user_session_path, class: 'btn' %>
+            <%= link_to "SIGN UP", new_user_registration_path, class: 'btn'  %>
+    </div>
+</div>

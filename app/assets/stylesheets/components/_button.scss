@@ -1,0 +1,49 @@
+.btn {
+    display: inline-block;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    background-origin: border-box; // Invisible borders with linear gradients
+    background-color: transparent;
+    border: solid 2px transparent;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    transition: filter 400ms, color 200ms;
+    color: black;
+    text-align: center;
+  
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      background-color: var(--color-primary);
+      width: 100%;
+      transition: filter 250ms, color 200ms;
+      color: var(--color-white);
+    }
+  
+    // Modifiers will go there
+  }
+
+  .btn-solid {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: solid 2px transparent;
+    width: 80%;
+    transition: filter 400ms, color 200ms;
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      background-color: var(--color-primary-rotate);
+      transition: filter 250ms, color 200ms;
+      color: var(--color-white);
+    }
+  }

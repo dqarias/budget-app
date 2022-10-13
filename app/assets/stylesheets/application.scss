@@ -1,3 +1,7 @@
-body {
-    background-color: aqua;
-}
+@import "config/variables";
+@import "config/base";
+@import "config/reset";
+@import "components/button";
+@import "components/link";
+@import "layout/splash";
+@import "layout/login";

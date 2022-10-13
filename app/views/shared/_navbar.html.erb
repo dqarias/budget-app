@@ -1,9 +1,8 @@
-<nav>
+<nav class="navbar">
   <% if user_signed_in? %>
-  <div>
-    Welcome <p><%= current_user.name %></p>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+  <div class="navbar__container">
+   <p> Welcome <%= current_user.name %></p>
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'link__button' %>
   </div>
   <% end %>
-
 </nav>

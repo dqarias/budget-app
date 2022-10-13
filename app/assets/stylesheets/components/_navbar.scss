@@ -1,0 +1,11 @@
+.navbar{
+    background: rgb(7,68,138);
+    background: linear-gradient(0deg, rgba(7,68,138,1) 0%, rgba(18,99,191,1) 46%, rgba(55,120,195,1) 100%, rgba(55,120,195,1) 100%);
+    padding: 1.5rem 2rem;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-white);
+        font-size: 1.6rem;
+    }
+}

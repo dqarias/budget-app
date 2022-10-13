@@ -22,6 +22,18 @@
   </div>
   
   <div>
+  <%= fields_for :categories do |extra_categories| %>
+  <%= extra_categories.collection_check_boxes( :category_ids, Category.where(user: current_user), :id, :name, include_hidden: false) do |b| %>
+  <% if b.value != params[:category_id].to_i %>
+    <li>
+      <%= b.check_box %>
+      <%= b.label %>
+    </li>
+  <% end %>
+  <% end %>
+  <%end%>
+  </div>
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

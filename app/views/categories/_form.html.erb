@@ -1,3 +1,14 @@
+<% icon_categories =[
+    {
+      icon: 'home',
+      title: 'home',
+    },
+    {
+      icon: 'transportation',
+      title: 'Transportation',
+    }
+  ] %>
+
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -17,8 +28,15 @@
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <ul>
+    <% icon_categories.each do |icon_category|%>
+      <li>
+        <%= form.radio_button :icon, icon_category[:icon] %> 
+        <img src="<%=asset_path("#{icon_category[:icon]}.png") %>" alt=<%=icon_category[:title]%>>
+      </li>
+       <% end %>
+    </ul>
+
   </div>
 
   <div>

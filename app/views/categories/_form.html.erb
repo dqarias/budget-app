@@ -6,9 +6,47 @@
     {
       icon: 'transportation',
       title: 'Transportation',
-    }
+    },
+    {
+      icon: 'food',
+      title: 'food',
+    },
+    {
+      icon: 'utilities',
+      title: 'utilities',
+    },
+    {
+      icon: 'clothing',
+      title: 'clothing',
+    },
+    {
+      icon: 'medical',
+      title: 'medical',
+    },
+    {
+      icon: 'insurance',
+      title: 'insurance',
+    },
+    {
+      icon: 'personal',
+      title: 'personal',
+    },
+    {
+      icon: 'debt',
+      title: 'debt',
+    },
+    {
+      icon: 'retirement',
+      title: 'retirement',
+    },
+    {
+      icon: 'education',
+      title: 'education',
+    },
+    
   ] %>
 
+<div class="newcategory__container">
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div style="color: red">
@@ -22,24 +60,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="newcategory__field">
+    <%= form.label :name, style: "display: block", class: 'form__label' %>
+    <%= form.text_field :name, class: 'form__input' %>
   </div>
-
-  <div>
-    <ul>
+   <p class="newcategory__text">Select an icon from the list</p>
+    
+    <ul class="newcategory__option">
+    
     <% icon_categories.each do |icon_category|%>
-      <li>
+      <li class="newcategory__option-list">
         <%= form.radio_button :icon, icon_category[:icon] %> 
-        <img src="<%=asset_path("#{icon_category[:icon]}.png") %>" alt=<%=icon_category[:title]%>>
+        <img class="newcategory__img" src="<%=asset_path("#{icon_category[:icon]}.png") %>" alt=<%=icon_category[:title]%>>
       </li>
        <% end %>
     </ul>
-
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="newcategory__button">
+    <%= form.submit :class => 'btn-solid'%>
   </div>
 <% end %>
+</div>

@@ -1,68 +1,67 @@
-.newoperation{
-    margin: 0 5% 0 5%;
-    font-family: var(--font-subtitles);
-    position: relative;
-    height: calc(100vh - 50px);
+.newoperation {
+  margin: 0 5% 0 5%;
+  font-family: var(--font-subtitles);
+  position: relative;
+  height: calc(100vh - 50px);
 
-    &__title{
-        font-size: 1.8rem;
-        color: var(--color-primary-rotate);
-        padding-top: 1rem;
+  &__title {
+    font-size: 1.8rem;
+    color: var(--color-primary-rotate);
+    padding-top: 1rem;
+  }
+
+  &__field {
+    padding-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: var(--color-secondary-light) solid 1px;
+    padding: 0.5rem 1rem;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    width: 6rem;
+    padding-left: 1rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+  }
+
+  &__option {
+    height: 80%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      align-items: center;
+      padding-bottom: 1rem;
     }
+  }
 
-    &__field{
-        padding-bottom: 1rem;
-        font-size: 1.4rem;
-        font-weight: 700;
-    }
-    &__input{
-        width: 100%;
-        border-radius: 0.5rem;
-        border: var(--color-secondary-light) solid 1px;
-        padding: 0.5rem 1rem;
-    }
-
-    &__btn{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__img{
-        width: 6rem;
-        padding-left: 1rem ;
-    }
-
-    &__text{
-        font-size: 1.4rem;
-        font-weight: 700;
-        padding-bottom: 1rem;
-    }
-
-    &__option{
-        height: 80%;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-
-        &-list{
-            display: flex;
-            align-items: center;
-            padding-bottom: 1rem;
-        }
-    }
-
-    
-
-    &__button{
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        padding-bottom: 2rem;
-    }
+  &__button {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 2rem;
+  }
 }

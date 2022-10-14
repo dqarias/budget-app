@@ -8,7 +8,7 @@ class Category < ApplicationRecord
   def total_amount_category
     total = 0
     operations.each do |operation|
-    total += operation.amount
+      total += operation.amount
     end
     total.round(2)
   end

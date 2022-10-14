@@ -26,5 +26,4 @@ RSpec.describe 'IndexCategories', type: :system do
     expect(page.body).to include('Name')
     expect(page.body).to include('Select an icon from the list')
   end
- 
 end

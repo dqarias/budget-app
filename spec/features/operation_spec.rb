@@ -20,5 +20,4 @@ RSpec.describe 'IndexOperation', type: :system do
     expect(page.body).to include('New Transaction')
     expect(current_path).to eq("/categories/#{@category.id}/operations/new")
   end
-
 end

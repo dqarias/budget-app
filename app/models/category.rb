@@ -4,4 +4,12 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+
+  def total_amount_category
+    total = 0
+    operations.each do |operation|
+    total += operation.amount
+    end
+    total.round(2)
+  end
 end

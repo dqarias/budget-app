@@ -1,0 +1,16 @@
+<%= render "shared/navbar" %>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="categories">
+<h2 class="categories__title">Categories:</h2>
+
+<div id="categories" class="categories__container">
+  <% @categories.each do |category| %>
+    <%= render category %>
+  <% end %>
+</div>
+<div class="categories__button">
+<%= link_to "New category", new_category_path, class: "btn-solid"  %>
+</div>
+</div>

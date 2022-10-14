@@ -1,0 +1,43 @@
+<div class="newoperation__container">
+<%= form_with(model: operation, url: category_operations_path(@category)) do |form| %>
+  <% if operation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+      <ul>
+        <% operation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="newcategory__field">
+    <%= form.label :name, style: "display: block", class: 'form__label' %>
+    <%= form.text_field :name, class: 'form__input' %>
+  </div>
+
+  <div class="newcategory__field">
+    <%= form.label :amount, style: "display: block", class: 'form__label' %>
+    <%= form.number_field :amount, class: 'form__input' %>
+  </div>
+
+  <p class="newoperation__text">Extra categories</p>
+  
+  <ul class="newoperation__option">
+  <%= fields_for :categories do |extra_categories| %>
+  <%= extra_categories.collection_check_boxes( :category_ids, Category.where(user: current_user), :id, :name, include_hidden: false, class: 'newoperation__check') do |b| %>
+  <% if b.value != params[:category_id].to_i %>
+    <li>
+      <%= b.check_box %>
+      <%= b.label %>
+    </li>
+  <% end %>
+  <% end %>
+  <%end%>
+  </ul>
+  <div class="newcategory__button">
+    <%= form.submit "Create new transaction", :class => 'btn-solid'%>
+  </div>
+<% end %>
+</div>

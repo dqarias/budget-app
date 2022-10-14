@@ -1,0 +1,21 @@
+
+<%= link_to category_operations_path(category) do %>
+<div class="categories__card" id="<%= dom_id category %>">
+  <img class="categories__card-img" src="<%=asset_path("#{category.icon}.png") %>" >
+
+  <div class="categories__card-info">
+    <p>
+      <%= category.name %>
+    </p>
+    <p class="categories__card-info-date">
+      <%= category.created_at.strftime("%Y-%m-%d") %>
+    </p>
+  </div>
+  <div class="categories__card-qty">
+    <p>
+      $ <%= category.total_amount_category %>
+    </p>
+  </div>
+  </div>
+<% end %>
+

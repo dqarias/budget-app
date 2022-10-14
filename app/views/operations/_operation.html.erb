@@ -1,0 +1,23 @@
+<div class="operations__card" id="<%= dom_id operation %>">
+  <div class="operations__card-info">
+  <p class="operations__card-info-name">
+    <%= operation.name %>
+  </p>
+
+  <p class="operations__card-info-qty">
+    <strong>Amount: $</strong>
+    <%= operation.amount %>
+  </p>
+  </div>
+<div class="operations__card-image">
+  <% operation.categories.each do |category| %>
+  <%= image_tag("#{category.icon}.png", alt: category.name, class: 'operations__card-image-img') %> 
+  <% end %>
+  </div>
+
+  <p class="operations__card-footer">
+    <strong>Created at:</strong>
+    <%= operation.created_at.strftime("%Y-%m-%d") %>
+  </p>
+
+</div>

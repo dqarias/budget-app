@@ -1,0 +1,31 @@
+<%= render "shared/navbar" %>
+<p style="color: green"><%= notice %></p>
+
+<div class="operation__category">
+<img class="categories__card-img" src="<%=asset_path("#{@category.icon}.png") %>" >
+<div>
+<p>
+<strong>Category:</strong> 
+<%= @category.name %>
+</p>
+<p>
+<strong>Total:</strong> 
+$ <%= @category.total_amount_category %>
+</p>
+</div>
+</div>
+
+<div class="operations">
+
+<h2 class="operations__title">Transactions</h2>
+
+<div id="operations" class="operations__container">
+  <% @operations.each do |operation| %>
+    <%= render operation %>
+
+  <% end %>
+</div>
+<div class="operations__button">
+<%= link_to "New transaction", new_category_operation_path(@category), class: "btn-solid" %>
+</div>
+</div>

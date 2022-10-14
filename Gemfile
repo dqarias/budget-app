@@ -66,6 +66,8 @@ group :development, :test do
   gem 'ffi'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  # Use postgresql as the database for Active Record
+  gem 'pg', '~> 1.1'
 end
 
 group :development do
@@ -84,4 +86,9 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :production do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'pg', '~> 1.1'
 end

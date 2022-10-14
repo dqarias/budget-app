@@ -1,3 +1,4 @@
+<div class="newoperation__container">
 <%= form_with(model: operation, url: category_operations_path(@category)) do |form| %>
   <% if operation.errors.any? %>
     <div style="color: red">
@@ -11,19 +12,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="newcategory__field">
+    <%= form.label :name, style: "display: block", class: 'form__label' %>
+    <%= form.text_field :name, class: 'form__input' %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
+  <div class="newcategory__field">
+    <%= form.label :amount, style: "display: block", class: 'form__label' %>
+    <%= form.number_field :amount, class: 'form__input' %>
   </div>
+
+  <p class="newoperation__text">Extra categories</p>
   
-  <div>
+  <ul class="newoperation__option">
   <%= fields_for :categories do |extra_categories| %>
-  <%= extra_categories.collection_check_boxes( :category_ids, Category.where(user: current_user), :id, :name, include_hidden: false) do |b| %>
+  <%= extra_categories.collection_check_boxes( :category_ids, Category.where(user: current_user), :id, :name, include_hidden: false, class: 'newoperation__check') do |b| %>
   <% if b.value != params[:category_id].to_i %>
     <li>
       <%= b.check_box %>
@@ -32,8 +35,9 @@
   <% end %>
   <% end %>
   <%end%>
-  </div>
-  <div>
-    <%= form.submit %>
+  </ul>
+  <div class="newcategory__button">
+    <%= form.submit :class => 'btn-solid'%>
   </div>
 <% end %>
+</div>

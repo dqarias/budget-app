@@ -1,0 +1,80 @@
+.operation{
+    &__category{
+        background-color: var(--color-background);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+        font-size: 1.4rem;
+    }
+}
+
+.operations{
+    margin: 0 5% 0 5%;
+    font-family: var(--font-subtitles);
+    position: relative;
+    height: calc(100vh - 110px);
+    
+    &__container{
+        height: 80%;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    &__title{
+        font-size: 1.8rem;
+        color: var(--color-primary-rotate);
+        padding-top: 1rem;
+    }
+
+    &__card{
+        margin: 1rem 0;
+        padding: 1rem 2.5rem;
+        background-color: var(--color-white);
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        color: var(--color-secondary);
+
+        &-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+
+            &-name{
+                font-size: 1.5rem;
+            }
+
+            &-qty{
+                font-size: 1.2rem;
+            }
+            
+        }
+
+        &-image{
+            display: flex;
+            flex-direction: row;
+
+            &-img{
+                width: 3rem;
+                padding-right: 1rem;
+            }
+        }
+
+        &-footer{
+            font-size: 1rem;
+            padding-top: 1rem;
+            text-align: center;
+        }
+    }
+
+    &__button{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding-bottom: 2rem;
+    }
+}

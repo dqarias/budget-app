@@ -1,9 +1,7 @@
-<h1>New operation</h1>
+<%= render "shared/navbar" %>
+<div class="newoperation">
+<h2 class="newoperation__title">New Transaction</h2>
 
 <%= render "form", operation: @operation %>
 
-<br>
-
-<div>
-  <%= link_to "Back to operations", category_operations_path %>
 </div>

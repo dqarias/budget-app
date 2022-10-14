@@ -6,7 +6,7 @@ class OperationsController < ApplicationController
 
   # GET /operations or /operations.json
   def index
-    @operations = @category.operations
+    @operations = @category.operations.includes(:categories_operations).includes([:categories])
   end
 
   # GET /operations/1 or /operations/1.json

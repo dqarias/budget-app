@@ -1,7 +1,7 @@
 .link {
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: var(--color-white);
     font-family: var( --font-subtitles);
   
     &:hover,
@@ -25,4 +25,9 @@
     border: transparent;
     color: var(--color-white);
     font-size: 1.6rem;
+  }
+
+  .lg{
+    font-size: 2rem;
+    font-weight: bold;
   }

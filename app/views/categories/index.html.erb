@@ -2,14 +2,15 @@
 
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<div class="categories">
+<h1 class="categories__title">Categories:</h1>
 
-
-<div id="categories">
+<div id="categories" class="categories__container">
   <% @categories.each do |category| %>
     <%= render category %>
   <% end %>
 </div>
-
-
-<%= link_to "New category", new_category_path %>
+<div class="categories__button">
+<%= link_to "New category", new_category_path, class:   %>
+</div>
+</div>

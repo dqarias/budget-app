@@ -1,16 +1,21 @@
-<div id="<%= dom_id category %>">
+
 <%= link_to category_operations_path(category) do %>
-  <p>
-    <strong>Name:</strong>
-    <%= category.name %>
-  </p>
+<div class="categories__card" id="<%= dom_id category %>">
+  <img class="categories__card-img" src="<%=asset_path("#{category.icon}.png") %>" >
 
-  <img src="<%=asset_path("#{category.icon}.png") %>" >
-
-
-  <p>
-    <strong>User:</strong>
-    <%= category.user_id %>
-  </p>
+  <div class="categories__card-info">
+    <p>
+      <%= category.name %>
+    </p>
+    <p class="categories__card-info-date">
+      <%= category.created_at.strftime("%Y-%m-%d") %>
+    </p>
+  </div>
+  <div class="categories__card-qty">
+    <p>
+      $45.00
+    </p>
+  </div>
+  </div>
 <% end %>
-</div>
+

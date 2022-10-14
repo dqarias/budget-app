@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 :root {
   
     // Application colors
   --color-primary:          #3778c3;
   --color-primary-rotate:   #1263bf;
-  --color-primary-bg:       rgb(253, 236, 236);
-  --color-secondary:        hsl(212, 11%, 30%);
+  --color-primary-bg:       #dcdee6;
+  --color-secondary-bg:     #d5e4f6;
+  --color-secondary:        #434b54;
   --color-secondary-rotate: hsl(210, 3%, 40%);
   --color-secondary-light:  hsl(210, 6%, 72%);
   --color-tertiary:         hsl(95, 68%, 42%);
@@ -19,6 +21,6 @@
 
   /* fonts variables */
   --font-titles: "Montserrat", sans-serif;
-  --font-subtitles: "Roboto Slab", sans-serif;
-
+  --font-subtitles: 'Lato', sans-serif;;
+  --font-subtitles1: "Roboto Slab", sans-serif;
   }

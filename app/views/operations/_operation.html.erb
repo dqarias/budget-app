@@ -11,9 +11,7 @@
   </div>
 <div class="operations__card-image">
   <% operation.categories.each do |category| %>
-          
-            <%= image_tag("#{category.icon}.png", alt: category.name, class: 'operations__card-image-img') %>
-          
+  <%= image_tag("#{category.icon}.png", alt: category.name, class: 'operations__card-image-img') %> 
   <% end %>
   </div>
 
